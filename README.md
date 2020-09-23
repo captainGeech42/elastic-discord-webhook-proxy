@@ -10,20 +10,22 @@ _Elastic webhook comes in, Discord webhook goes out, profit._
 
 By default, an embedded rich message will be sent to Discord but this can be disabled in the config file.
 
+Please note that at this time, only uptime monitor alerts are supported.
+
 Sample embed message:
 
-![Rich Message](https://i.imgur.com/hkjoS4Z.png)
+![Rich Message](https://i.imgur.com/m0oVJBb.png)
 
-The color of the message (on the left side) will be either green (success), red (error), blue (plan needs confirmation), or yellow (other).
+The color of the message (on the left side) will be either red if the alert is triggered, or green if not.
 
 ## Usage
 
 1. Download: `go get github.com/captainGeech42/elastic-discord-webhook-proxy`
 2. Copy the `config.ex.json` file to your current directory as `config.json`
 3. Update the `WebhookURL` field with a Discord webhook URL ([Discord docs on webhooks](https://support.discord.com/hc/en-us/articles/228383668))
-4. Run it: `elastic-discord-webhook-proxy`
+4. Run it: `./elastic-discord-webhook-proxy`
 
-The proxy will be available at `http://host:8080/webhook`. Create a new webhook alert connector in Kibana, and use the following as the body of the alert webhook action:
+The proxy will be available at `http://host:8080/webhook`. Create a new webhook alert connector in Kibana pointing to that URL, and use the following as the body of the alert webhook action (for an uptime monitor):
 
 ```json
 {
