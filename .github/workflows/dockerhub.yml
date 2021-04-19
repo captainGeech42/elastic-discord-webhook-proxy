@@ -3,7 +3,7 @@ name: Docker Hub Publish
 on:
   release:
     types: [published]
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   update:
