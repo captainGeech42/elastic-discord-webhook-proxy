@@ -57,7 +57,7 @@ func handleIncomingWebhook(w http.ResponseWriter, r *http.Request) {
 	var webhook ElasticWebhook
 	err = json.Unmarshal(buf, &webhook)
 	if err != nil {
-		log.Println("Failed to unmarshal Terraform webhook: " + err.Error())
+		log.Println("Failed to unmarshal Elastic webhook: " + err.Error())
 		return
 	}
 
