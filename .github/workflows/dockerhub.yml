@@ -23,7 +23,7 @@ jobs:
       run: echo "RELEASE_VERSION=${GITHUB_REF:10}" >> $GITHUB_ENV
 
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: ${{ secrets.DOCKER_USERNAME }}/elastic-discord-webhook-proxy
         username: ${{ secrets.DOCKER_USERNAME }}
